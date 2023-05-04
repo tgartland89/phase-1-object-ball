@@ -127,4 +127,27 @@ function homeTeamName() {
     return object["home"]["teamName"];
   }
   
-  console.log(homeTeamName());
+function numPointsScored(playerName){
+   const game = gameObject();
+
+   for(let teamName in game) {
+    const team = game[teamName];
+    for(let playerNameinTeam in team.players){
+   if (playerNameinTeam === playerName) {
+    return team.players[playerNameinTeam].points;
+                }
+            }
+   }
+}
+function shoeSize(playerName){
+    const game = gameObject();
+ 
+    for(let teamName in game) {
+     const team = game[teamName];
+     for(let playerNameinTeam in team.players){
+    if (playerNameinTeam === playerName) {
+     return team.players[playerNameinTeam].shoe;
+                 }
+             }
+    }
+}
