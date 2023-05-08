@@ -169,7 +169,7 @@ function teamName(){
     let teamNames = []
 
     for (let team in game){
-        teamName.push(game[team].teamName);
+        teamNames.push(game[team].teamName);
     }
     return teamName;
 }
