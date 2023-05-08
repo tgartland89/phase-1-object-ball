@@ -122,6 +122,8 @@ away: {
 }
 }
 console.log(gameObject())
+
+
 function homeTeamName() {
     let object = gameObject();
     return object["home"]["teamName"];
@@ -151,3 +153,43 @@ function shoeSize(playerName){
              }
     }
 }
+
+function teamColors(nameOfTeam){
+    let game = gameObject();
+ for (let teamStatus in game) {
+    let homeOrAway = game[teamStatus];
+    if(homeOrAway.teamName === nameOfTeam) {
+        return homeOrAway.colors;
+    }
+    }
+ }
+ 
+function teamName(){
+    let game = gameObject()
+    let teamNames = []
+
+    for (let team in game){
+        teamName.push(game[team].teamName);
+    }
+    return teamName;
+}
+console.log(teamName())
+
+function playerNumbers(teamName) {
+    const teamJerseys = {
+      team1: [0, 30, 11, 1, 31],
+      team2: [4, 0, 2, 8, 33],
+    };
+    if (teamName in teamJerseys) {
+      return teamJerseys[teamName];
+    } else {
+      return [];
+    }
+  }
+  function playerStats(playerName){
+    for(let i = 0; i<players.length; i++) {
+        if(players[i].name === playerName) {
+            return platers[i]
+    }
+  }
+  }
